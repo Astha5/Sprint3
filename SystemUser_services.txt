@@ -1,0 +1,58 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { SystemUser } from '../Models/systemUser';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SystemUsersService {
+  constructor(private httpClient: HttpClient) {
+  }
+
+  AddSystemUser(systemUser: SystemUser): Observable<boolean> {
+    systemUser.creationDateTime = new Date().toLocaleDateString();
+    systemUser.lastModifiedDateTime = new Date().toLocaleDateString();
+    systemUser.systemUserID = this.uuidv4();
+    return this.httpClient.post<boolean>(`/api/systemUsers`, systemUser);
+  }
+
+  UpdateSystemUser(systemUser: SystemUser): Observable<boolean> {
+    systemUser.lastModifiedDateTime = new Date().toLocaleDateString();
+    return this.httpClient.put<boolean>(`/api/systemUsers`, systemUser);
+  }
+
+  DeleteSystemUser(systemUserID: string, id: number): Observable<boolean> {
+    return this.httpClient.delete<boolean>(`/api/systemUsers/${id}`);
+  }
+
+  GetAllSystemUsers(): Observable<SystemUser[]> {
+    return this.httpClient.get<SystemUser[]>(`/api/systemUsers`);
+  }
+
+  GetSystemUserBySystemUserID(SystemUserID: number): Observable<SystemUser> {
+    return this.httpClient.get<SystemUser>(`/api/systemUsers?systemUserID=${SystemUserID}`);
+  }
+
+  GetSystemUsersBySystemUserName(SystemUserName: string): Observable<SystemUser[]> {
+    return this.httpClient.get<SystemUser[]>(`/api/systemUsers?systemUserName=${SystemUserName}`);
+  }
+
+  GetSystemUserByEmail(Email: string): Observable<SystemUser> {
+    return this.httpClient.get<SystemUser>(`/api/systemUsers?email=${Email}`);
+  }
+
+  GetSystemUserByEmailAndPassword(Email: string, Password: string): Observable<SystemUser> {
+    return this.httpClient.get<SystemUser>(`/api/systemUsers?email=${Email}&password=${Password}`);
+  }
+
+  uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  }
+}
+
+
+

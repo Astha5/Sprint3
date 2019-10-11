@@ -1,0 +1,21 @@
+export class SystemUser {
+  id: number;
+  systemUserID: string;
+  systemUserName: string;
+  systemUserMobile: string;
+  email: string;
+  password: string;
+  creationDateTime: string;
+  lastModifiedDateTime: string;
+
+  constructor(ID: number, SystemUserID: string, SystemUserName: string, SystemUserMobile: string, Email: string, Password: string, CreationDateTime: string, LastModifiedDateTime: string) {
+    this.id = ID;
+    this.systemUserID = SystemUserID;
+    this.systemUserName = SystemUserName;
+    this.systemUserMobile = SystemUserMobile;
+    this.email = Email;
+    this.password = Password;
+    this.creationDateTime = CreationDateTime;
+    this.lastModifiedDateTime = LastModifiedDateTime;
+  }
+}
