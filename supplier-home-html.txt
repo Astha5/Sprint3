@@ -1,0 +1,31 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Supplier</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Details</h3>
+    <ul class="list-group">
+      <li class="list-group-item">Stored Addresses <span class="badge badge-secondary float-right">4</span></li>
+
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h3>Payments</h3>
+    <ul class="list-group">
+
+      <li class="list-group-item">Payments Done <span class="badge badge-secondary float-right">10</span></li>
+      <li class="list-group-item">Payments Pending <span class="badge badge-secondary float-right">16</span></li>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h3>Raw Materials</h3>
+    <ul class="list-group">
+      <li class="list-group-item">Raw Materials Count <span class="badge badge-secondary float-right">1400</span></li>
+
+    </ul>
+  </div>
+</div>
