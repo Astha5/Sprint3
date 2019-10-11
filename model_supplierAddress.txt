@@ -1,0 +1,25 @@
+export class SupplierAddress {
+  id: number;
+  supplierAddressID: string;
+  supplierAddressLine1: string;
+  supplierAddressLine2: string;
+  city: string;
+  state: string;
+  pincode: number;
+  creationDateTime: string;
+  lastModifiedDateTime: string;
+  
+
+  constructor(ID: number, SupplierAddressID: string, SupplierAddressLine1: string, SupplierAddressLine2: string, City: string, State: string, Pincode: number, CreationDateTime: string, LastModifiedDateTime: string) {
+    this.id = ID;
+    this.supplierAddressID = SupplierAddressID;
+    this.supplierAddressLine1 = SupplierAddressLine1;
+    this.supplierAddressLine2 = SupplierAddressLine2;
+    this.city = City;
+    this.state = State;
+    this.pincode = Pincode;
+    this.creationDateTime = CreationDateTime;
+    this.lastModifiedDateTime = LastModifiedDateTime;
+    
+  }
+}
